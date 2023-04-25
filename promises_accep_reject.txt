@@ -1,0 +1,21 @@
+// Obtener de forma random un numero entre 1 y 100
+const randomNum = (min, max) => {
+  // incluye el min y el max (por eso el +1)
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
+new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(randomNum(1, 100));
+  }, 1000);
+})
+  .then((response) => {
+    if (response >= 20 && response <= 60) {
+      console.log(`${response} esta entre 20 y 60`);
+    } else {
+      console.log(`${response} no esta entre 20 y 60`);
+    }
+  })
+  .catch((error) => {
+    console.log(`Error: ${error}`);
+  });
